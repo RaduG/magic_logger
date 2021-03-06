@@ -6,13 +6,14 @@ this_directory = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(this_directory, "README.md"), "r") as f:
     long_description = f.read()
 
+description = "This very simple module does its best to help you use Python's logging correctly, by always calling the correct logger for a module."
 
 setup(
     name="magic_logger",
     py_modules=["magic_logger"],
     version="1.0.0",
     license="MIT",
-    description="Helps you use logging correctly.",
+    description=description,
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Radu Ghitescu",
