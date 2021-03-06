@@ -2,6 +2,12 @@
 This very simple module does its best to help you use Python's `logging` correctly, by always
 calling the correct logger for a module. No more boilerplace `logger.getLogger(__name__)` in every module!
 
+## Getting started
+To install:
+```bash
+pip install magic_logger==1.0.0
+```
+
 ## Overview
 Import `logger` from `magic_logger` and just call any methods you'd normally call on a `logging.Logger` instance:
 
@@ -23,7 +29,7 @@ logger.stop_listening(...)  # dispatches to logging.config.stopListening
 ### What about the other stuff in `logging`
 For anything else, just use `logging` directly. `magic_logger` just proxies call over anyway so you can use `logging` as usual.
 
-## How does it works?
+## How does it work?
 When you ask for an attribute of `magic_logger.logger` (other than the configuration ones listed above),
 it looks at the stack and determines the module from where the call originates. It then returns the attribute
 of the same name of the correct logger for that module, using `logging.getLogger`. As simple as that!
