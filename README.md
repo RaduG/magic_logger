@@ -1,4 +1,8 @@
 # magic_logger
+| Coverage | Release |
+| :------: | :-----: |
+| [![Coverage Status](https://coveralls.io/repos/github/RaduG/magic_logger/badge.svg?branch=master)](https://coveralls.io/github/RaduG/magic_logger?branch=master) | ![Release](https://badge.fury.io/py/magic-logger.svg) |
+
 This very simple module does its best to help you use Python's `logging` correctly, by making sure you always
 invoke the right `Logger` for a module. No more boilerplace `logger.getLogger(__name__)`! All this
 without any external dependencies - this is just a tiny wrapper for `logging`.
