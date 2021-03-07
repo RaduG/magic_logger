@@ -11,7 +11,7 @@ description = "This very simple module does its best to help you use Python's lo
 setup(
     name="magic_logger",
     py_modules=["magic_logger"],
-    version="1.0.0",
+    version="1.0.1",
     license="MIT",
     description=description,
     long_description=long_description,
