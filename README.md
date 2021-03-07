@@ -1,6 +1,7 @@
 # magic_logger
-This very simple module does its best to help you use Python's `logging` correctly, by always
-calling the correct logger for a module. No more boilerplace `logger.getLogger(__name__)` in every module!
+This very simple module does its best to help you use Python's `logging` correctly, by making sure you always
+invoke the right `Logger` for a module. No more boilerplace `logger.getLogger(__name__)`! All this
+without any external dependencies - this is just a tiny wrapper for `logging`.
 
 ## Getting started
 To install:
@@ -27,7 +28,7 @@ logger.stop_listening(...)  # dispatches to logging.config.stopListening
 ``` 
 
 ### What about the other stuff in `logging`
-For anything else, just use `logging` directly. `magic_logger` just proxies call over anyway so you can use `logging` as usual.
+For anything else, just use `logging` directly. `magic_logger` just proxies calls over anyway so you can use `logging` as usual.
 
 ## How does it work?
 When you ask for an attribute of `magic_logger.logger` (other than the configuration ones listed above),
@@ -35,5 +36,6 @@ it looks at the stack and determines the module from where the call originates. 
 of the same name of the correct logger for that module, using `logging.getLogger`. As simple as that!
 
 ### What if I call a module using `python -m` and log something from it, will that use the logger for `__main__`?
-No, it will simply look at the module's `__spec__` for the name. Unless you're running an interactive session, you won't use the logger for `__main__`!
+No, it will simply look at the module's `__spec__` for the name. Unless you run an interactive session and log straight from it,
+you won't ever use the logger for `__main__`!
 
